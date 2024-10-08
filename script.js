@@ -15,7 +15,7 @@ function checkGuess() {
 
     // Validasi input
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-        feedback.textContent = "Please enter a number between 1 and 100!";
+        feedback.textContent = "1-100 ora luweh ora kurang";
         feedback.className = 'incorrect';
         return;
     }
@@ -25,18 +25,18 @@ function checkGuess() {
 
     // Cek apakah tebakan benar
     if (userGuess === secretNumber) {
-        feedback.textContent = `Congratulations! You guessed it right, the number was ${secretNumber}.`;
+        feedback.textContent = `Yey pener, angka ne = ${secretNumber}.`;
         feedback.className = 'correct';
         endGame();
     } else if (guessesLeft === 0) {
-        feedback.textContent = `Game over! The correct number was ${secretNumber}.`;
+        feedback.textContent = `Salah. Jane iso po ra? Angka ne seng bener = ${secretNumber}.`;
         feedback.className = 'incorrect';
         endGame();
     } else {
         if (userGuess > secretNumber) {
-            feedback.textContent = "Too high! Try again.";
+            feedback.textContent = "Keduwuren";
         } else {
-            feedback.textContent = "Too low! Try again.";
+            feedback.textContent = "Keciliken";
         }
         feedback.className = 'incorrect';
     }
